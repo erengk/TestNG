@@ -3,6 +3,7 @@ package Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -24,14 +25,16 @@ public class BaseDriver {
         logger.setLevel(Level.SEVERE);
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 
-        //driver = new ChromeDriver();
+        driver = new ChromeDriver();
         //driver = new SafariDriver();
-        driver = new FirefoxDriver();
+        //driver = new FirefoxDriver();
         driver.manage().window().maximize();
 
         Duration dr = Duration.ofSeconds(30);
         driver.manage().timeouts().pageLoadTimeout(dr);
-        driver.manage().timeouts().implicitlyWait(dr);
+        //driver.manage().timeouts().implicitlyWait(dr);
+
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
         login();
     }

@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="mySuite">
+    <test  name="Test1">
+        <classes>
+            <class name="_01_Giris._11_SecondClass"></class>
+            <class name="_01_Giris._10_FirstClass"></class>
+        </classes>
+    </test>
+</suite>
