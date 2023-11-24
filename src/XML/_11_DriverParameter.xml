@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="mySuite">
+    <test  name="Test1">
+        <parameter name="items" value="macbook"></parameter>
+        <parameter name="driverType" value=""></parameter>
+        <classes>
+            <class name="Utility.BaseDriverParameter"></class>
+            <class name="_01_Giris._16_SearchItem"></class>
+        </classes>
+    </test>
+</suite>

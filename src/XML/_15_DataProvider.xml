@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="mySuite">
+    <test  name="Test1">
+        <parameter name="" value="macbook"></parameter>
+        <classes>
+            <class name="_01_Giris._18_DataProvider"></class>
+        </classes>
+    </test>
+</suite>

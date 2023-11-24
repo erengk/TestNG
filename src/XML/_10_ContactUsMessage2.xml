@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="mySuite">
+    <test  name="Test1">
+        <parameter name="text" value="Merhaba bu bir test mesajıdır"></parameter>
+        <classes>
+            <class name="_01_Giris._15_ContactParameter"></class>
+        </classes>
+    </test>
+    <test  name="Test2">
+        <parameter name="text" value="Bu da ikinci test mesajı"></parameter>
+        <classes>
+            <class name="_01_Giris._15_ContactParameter"></class>
+        </classes>
+    </test>
+</suite>

@@ -7,40 +7,48 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 import java.time.Duration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class BaseDriver {
-    public static WebDriver driver;
+public class BaseDriverParameter {
+    public WebDriver driver;
     public static WebDriverWait wait;
 
     @BeforeClass
-    public void baslangicIslemleri(){
+    @Parameters("driverType")
+    public void baslangicIslemleri(String driverType){
         Logger logger = Logger.getLogger("");
         logger.setLevel(Level.SEVERE);
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 
-        driver = new ChromeDriver();
-        //driver = new SafariDriver();
-        //driver = new FirefoxDriver();
-        //driver = new EdgeDriver();
+        switch (driverType.toLowerCase()){
+            case "firefox": driver = new FirefoxDriver();
+            break;
+            case "safari": driver = new SafariDriver();
+            break;
+            case "edge": driver = new EdgeDriver();
+            break;
+            default: driver = new ChromeDriver();
+        }
+
         driver.manage().window().maximize();
 
         Duration dr = Duration.ofSeconds(30);
         driver.manage().timeouts().pageLoadTimeout(dr);
-        //driver.manage().timeouts().implicitlyWait(dr);
+        driver.manage().timeouts().implicitlyWait(dr);
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
         login();
     }
-
     void login(){
         System.out.println("Login Test Başladı");
 
