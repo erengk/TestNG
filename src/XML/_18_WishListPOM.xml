@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="mySuite">
+    <test name="wishListTest">
+        <parameter name="item" value="canon"></parameter>
+        <classes>
+            <class name="_01_Giris._23_WishList"></class>
+        </classes>
+    </test>
+</suite>

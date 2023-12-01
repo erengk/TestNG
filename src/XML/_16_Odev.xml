@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="my suite" parallel="tests" thread-count="2">
+    <test name="myTest1">
+        <parameter name="driverType" value="chrome"></parameter>
+        <classes>
+            <class name="_01_Giris._17_Odev">
+            </class>
+        </classes>
+    </test>
+    <test name="myTest2">
+        <parameter name="driverType" value="firefox"></parameter>
+        <classes>
+            <class name="_01_Giris._17_Odev">
+            </class>
+        </classes>
+    </test>
+</suite>
